@@ -11,7 +11,7 @@ public class LoginInterface extends JFrame {
     private JButton loginButton;
 
     public LoginInterface(){
-       
+       //JFrame
          setTitle("Banking App Login");
         setSize(400, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -20,8 +20,8 @@ public class LoginInterface extends JFrame {
         // Use GridBagLayout
         JPanel panel = new JPanel(new GridBagLayout());
         GridBagConstraints gbc = new GridBagConstraints();
-        gbc.insets = new Insets(5, 5, 5, 5); // padding around components
-        gbc.fill = GridBagConstraints.HORIZONTAL; // make components stretch horizontally
+        gbc.insets = new Insets(5, 5, 5, 5); 
+        gbc.fill = GridBagConstraints.HORIZONTAL;
 
         // Username Label
         gbc.gridx = 0; // column 0
@@ -31,7 +31,7 @@ public class LoginInterface extends JFrame {
         // Username Field
         gbc.gridx = 1; // column 1
         gbc.gridy = 0;
-        usernameField = new JTextField(20); // 20 columns wide
+        usernameField = new JTextField(20); 
         panel.add(usernameField, gbc);
 
         // Password Label
@@ -57,9 +57,9 @@ public class LoginInterface extends JFrame {
         // Button action
         loginButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                String username = usernameField.getText();
-                String password = new String(passwordField.getPassword());
-
+                String username = getUsername();
+                String password = getPassword();
+            
                 if(username.equals("admin") && password.equals("1234")) {
                     JOptionPane.showMessageDialog(null, "Login Successful!");
                 } else {
@@ -68,9 +68,18 @@ public class LoginInterface extends JFrame {
             }
         });
     }
+
+     public String getUsername() {
+        return usernameField.getText();
+    }
+    
+    public String getPassword(){
+        return new String(passwordField.getPassword());
+    }
     public static void main(String[] args) {
        SwingUtilities.invokeLater(() -> {
         new LoginInterface().setVisible(true);
     });
     }
+   
 }
