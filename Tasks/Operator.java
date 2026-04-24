@@ -21,7 +21,7 @@ public class Operator {
     private double div() {
         return (double) num1/num2;
     }
-    static void main(String[] args) {
+    static void main() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter Two Numbers : ");
         int num1 = sc.nextInt();
