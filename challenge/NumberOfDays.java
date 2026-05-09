@@ -9,12 +9,11 @@ public class NumberOfDays {
         LocalDate numMonth = m.plusMonths(n);
         day = numMonth.lengthOfMonth();
         month = numMonth.getMonth().name();
-        
     }
     void result(){
         System.out.println(month+" has "+day +" days");
     }
-    public static void main(String[] args) { 
+    static void main() {
            
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter Month: ");
@@ -38,7 +37,7 @@ public class NumberOfDays {
                     break;
                 case 3:
                     dm.result();
-                    
+
                     break;
                 case 4:
                     dm.result();

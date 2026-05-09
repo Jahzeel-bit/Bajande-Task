@@ -16,7 +16,7 @@ public class Task9 {
         return Math.floorDiv(a,b);
     }
 
-    static void main() {
+     static void main() {
         System.out.println("Enter two number: ");
         Scanner sc = new Scanner(System.in);
         int num1 = sc.nextInt();
